@@ -226,6 +226,23 @@
   pointer-events: none;
 }
 
+/* When a scene and an inset (e.g. a live MAC table) are shown together,
+   stack them vertically instead of overlaying the inset on the devices. */
+.stage.is-stacked .stage-svg {
+  flex: none;
+  height: 300px;
+}
+.stage.is-stacked .stage-inset {
+  position: static;
+  inset: auto;
+  padding: 4px 16px 6px;
+}
+.stage.is-stacked .stage-caption {
+  position: static;
+  margin-top: auto;
+  padding: 8px 0 14px;
+}
+
 /* ---- Binary encoder visual ---- */
 .binenc {
   width: min(520px, 100%);
@@ -491,6 +508,87 @@
 }
 .framecard-note strong {
   color: var(--text-0);
+}
+
+/* ---- MAC address table (switch CAM table) ---- */
+.mactable {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mactable-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--accent-2);
+  text-transform: uppercase;
+}
+.mactable-head {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 10px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  border-bottom: 1px solid var(--border);
+}
+.mactable-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 132px;
+}
+.mactable-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 132px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-3);
+  font-size: 13px;
+  font-style: italic;
+}
+.mactable-row {
+  display: grid;
+  grid-template-columns: 92px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-2);
+}
+.mactable-row.is-fresh {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 0 18px -6px var(--accent);
+}
+.mt-port {
+  font-weight: 700;
+  color: var(--accent-4);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.mt-mac {
+  font-size: 13px;
+  color: var(--text-0);
+}
+.mt-tag {
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.mactable-note {
+  color: var(--text-2);
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.55;
+  margin-top: 2px;
 }
 
 /* ---- Narrator ---- */

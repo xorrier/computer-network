@@ -5,6 +5,7 @@ import { DeviceGlyph } from "@/components/network/DeviceGlyphs";
 import { BinaryEncoder } from "./BinaryEncoder";
 import { MacCard } from "./MacCard";
 import { FrameDiagram } from "./FrameDiagram";
+import { MacTable } from "./MacTable";
 
 const VIEW_W = 1000;
 const VIEW_H = 600;
@@ -35,7 +36,7 @@ export function Stage({ model, onSelectNode }: StageProps) {
   }, [model.links]);
 
   return (
-    <div className="stage">
+    <div className={"stage" + (model.nodes.length > 0 && model.inset ? " is-stacked" : "")}>
       <svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} className="stage-svg" role="img" aria-label="Network scene">
         <defs>
           <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
@@ -181,6 +182,9 @@ export function Stage({ model, onSelectNode }: StageProps) {
               src={model.insetFrame?.src ?? "…"}
               payload={model.insetFrame?.payload ?? "hi"}
             />
+          )}
+          {model.inset === "mactable" && (
+            <MacTable rows={model.insetMacTable?.rows ?? []} note={model.insetMacTable?.note} />
           )}
         </div>
       )}
