@@ -48,12 +48,14 @@ export interface StageModel {
   links?: StageLink[];
   signals?: StageSignal[];
   /** Optional centered special visual instead of / above the device scene. */
-  inset?: "binary" | "mac" | "frame" | "mactable" | null;
+  inset?: "binary" | "mac" | "frame" | "mactable" | "ip" | null;
   insetText?: string;
   /** MAC address string for the "mac" inset, e.g. "00:1A:2B:3C:4D:5E". */
   insetMac?: string;
   /** Field values for the "frame" inset. */
   insetFrame?: { dst: string; src: string; payload: string };
+  /** IPv4 address + prefix length for the "ip" inset, e.g. "192.168.1.10" /24. */
+  insetIp?: { ip: string; prefix: number };
   /** A switch's live MAC-address table for the "mactable" inset. */
   insetMacTable?: {
     rows: { port: string; mac: string; fresh?: boolean }[];

@@ -6,6 +6,7 @@ import { BinaryEncoder } from "./BinaryEncoder";
 import { MacCard } from "./MacCard";
 import { FrameDiagram } from "./FrameDiagram";
 import { MacTable } from "./MacTable";
+import { IpCard } from "./IpCard";
 
 const VIEW_W = 1000;
 const VIEW_H = 600;
@@ -185,6 +186,9 @@ export function Stage({ model, onSelectNode }: StageProps) {
           )}
           {model.inset === "mactable" && (
             <MacTable rows={model.insetMacTable?.rows ?? []} note={model.insetMacTable?.note} />
+          )}
+          {model.inset === "ip" && (
+            <IpCard ip={model.insetIp?.ip ?? "192.168.1.10"} prefix={model.insetIp?.prefix ?? 24} />
           )}
         </div>
       )}
