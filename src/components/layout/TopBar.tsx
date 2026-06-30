@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 
 export function TopBar() {
   const { pathname } = useLocation();
-  const onLesson = pathname.startsWith("/lesson");
+  const onLesson = pathname.startsWith("/chapter");
 
   return (
     <header className="topbar">
@@ -27,14 +27,14 @@ export function TopBar() {
 
       <nav className="topnav">
         <Link to="/" className={!onLesson ? "is-active" : ""}>
-          Home
+          Journey
         </Link>
-        <Link to="/lesson/packet-journey" className={onLesson ? "is-active" : ""}>
-          Lessons
+        <Link to="/chapter/what-is-a-computer" className={onLesson ? "is-active" : ""}>
+          Start
         </Link>
       </nav>
 
-      <span className="topbar-tag">Learn networks by watching packets move</span>
+      <span className="topbar-tag">Build the internet from one computer up</span>
     </header>
   );
 }

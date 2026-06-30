@@ -16,6 +16,55 @@ export interface DeviceInfo {
 }
 
 export const DEVICE_INFO: Record<DeviceKind, DeviceInfo> = {
+  computer: {
+    title: "Computer / Host",
+    layer: "application",
+    definition:
+      "A machine that stores and processes information as bits, and can produce or consume data to communicate with other machines.",
+    purpose: "Turn human intent into bits, and bits back into something humans understand.",
+    responsibilities: [
+      "Store and process data as bits",
+      "Encode messages into signals",
+      "Decode incoming signals into data",
+    ],
+    analogy: "A person who can read, write, and think — but needs a way to mail letters.",
+    dataStructures: ["Memory (RAM)", "Files on disk", "Network interface buffer"],
+    examplePacket: "'h' -> 01101000 -> voltage pulses on the wire",
+    interviewQuestions: [
+      "What is a bit and a byte?",
+      "How is text represented in binary (ASCII/UTF-8)?",
+    ],
+    misconceptions: [
+      "Computers do not send 'letters' or 'pictures' — only bits.",
+      "A lone computer can create data but has nowhere to send it.",
+    ],
+    linuxCommands: ["echo -n h | xxd -b", "hostname"],
+    wireshark: ["frame", "data"],
+  },
+  hub: {
+    title: "Hub (Repeater)",
+    layer: "physical",
+    definition:
+      "A simple Layer 1 device that electrically repeats every incoming signal out to all of its other ports.",
+    purpose: "Let many computers share one connection instead of wiring every pair directly.",
+    responsibilities: [
+      "Repeat incoming bits to every other port",
+      "Connect multiple devices into one shared segment",
+    ],
+    analogy: "A person who hears one word and shouts it to everyone in the room.",
+    dataStructures: ["None — a hub keeps no tables and makes no decisions"],
+    examplePacket: "A's bits arrive -> copied to B and C unchanged",
+    interviewQuestions: [
+      "Why is a hub considered a single collision domain?",
+      "How does a hub differ from a switch?",
+    ],
+    misconceptions: [
+      "A hub does NOT look at addresses — it copies bits blindly.",
+      "A hub gives no privacy: every device sees every message.",
+    ],
+    linuxCommands: ["ip link show", "tcpdump -i eth0"],
+    wireshark: ["eth", "frame"],
+  },
   browser: {
     title: "Browser / Host",
     layer: "application",

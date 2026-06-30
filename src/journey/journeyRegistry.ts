@@ -1,0 +1,36 @@
+import type { Chapter, RoadmapEntry } from "@/types/journey";
+import { chapter01 } from "./chapters/ch01";
+import { chapter02 } from "./chapters/ch02";
+import { chapter03 } from "./chapters/ch03";
+import { chapter04 } from "./chapters/ch04";
+
+export const CHAPTERS: Chapter[] = [chapter01, chapter02, chapter03, chapter04];
+
+export function getChapterBySlug(slug: string): Chapter | undefined {
+  return CHAPTERS.find((c) => c.slug === slug);
+}
+
+export function getNextChapter(currentNumber: number): Chapter | undefined {
+  return CHAPTERS.find((c) => c.number === currentNumber + 1);
+}
+
+/**
+ * The full story map. Only chapters with authored beats are "ready"; the rest
+ * are visible so the learner can see where the journey leads, but locked.
+ */
+export const ROADMAP: RoadmapEntry[] = [
+  { number: 1, question: "What is a computer, and what is data?", concept: "bits & signals", slug: "what-is-a-computer", status: "ready" },
+  { number: 2, question: "How do two computers physically talk?", concept: "the link / wire", slug: "two-computers", status: "ready" },
+  { number: 3, question: "Why does each computer need an identity?", concept: "addressing", slug: "computer-identity", status: "ready" },
+  { number: 4, question: "What is a MAC address?", concept: "hardware identity", slug: "mac-address", status: "ready" },
+  { number: 5, question: "The hub shouts to everyone — what is a switch?", concept: "switching", status: "soon" },
+  { number: 6, question: "Why can't a switch reach another network?", concept: "broadcast domains", status: "soon" },
+  { number: 7, question: "What problem does a router solve?", concept: "routing", status: "soon" },
+  { number: 8, question: "What is an IP address?", concept: "logical addressing", status: "soon" },
+  { number: 9, question: "How do millions of networks connect?", concept: "Internet & ISPs", status: "soon" },
+  { number: 10, question: "I typed google.com — what is that name?", concept: "names vs addresses", status: "soon" },
+  { number: 11, question: "How does DNS find the address?", concept: "DNS resolution", status: "soon" },
+  { number: 12, question: "How is a reliable connection made?", concept: "TCP handshake", status: "soon" },
+  { number: 13, question: "Why is HTTPS secure?", concept: "TLS", status: "soon" },
+  { number: 14, question: "How does the page finally appear?", concept: "HTTP & rendering", status: "soon" },
+];

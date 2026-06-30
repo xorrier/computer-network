@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { TopBar } from "@/components/layout/TopBar";
-import { HomePage } from "@/pages/HomePage";
-import { LessonPage } from "@/pages/LessonPage";
+import { JourneyHome } from "@/pages/JourneyHome";
+import { ChapterPage } from "@/pages/ChapterPage";
 
 export function App() {
   return (
@@ -9,8 +9,8 @@ export function App() {
       <TopBar />
       <main className="app-main">
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/lesson/:slug" element={<LessonPage />} />
+          <Route path="/" element={<JourneyHome />} />
+          <Route path="/chapter/:slug" element={<ChapterPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

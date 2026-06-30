@@ -24,6 +24,8 @@ export interface OsiLayer {
 
 /** A device drawn on the network canvas. */
 export type DeviceKind =
+  | "computer"
+  | "hub"
   | "browser"
   | "switch"
   | "router"

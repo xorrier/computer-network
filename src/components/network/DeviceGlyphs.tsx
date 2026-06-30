@@ -12,6 +12,40 @@ interface GlyphProps {
 
 const SCREEN = "#0b1020";
 
+function Computer({ active }: GlyphProps) {
+  return (
+    <g>
+      {/* Monitor */}
+      <rect x={-46} y={-40} width={92} height={64} rx={9} fill="var(--bg-2)" stroke={active ? "var(--accent)" : "var(--border-strong)"} strokeWidth={active ? 3 : 1.5} />
+      <rect x={-39} y={-33} width={78} height={50} rx={5} fill={SCREEN} />
+      {/* Screen content */}
+      <circle cx={-26} cy={-20} r={4} fill="var(--accent)" opacity={0.9} />
+      <rect x={-16} y={-23} width={42} height={6} rx={3} fill="rgba(255,255,255,0.18)" />
+      <rect x={-30} y={-8} width={56} height={5} rx={2.5} fill="rgba(255,255,255,0.12)" />
+      <rect x={-30} y={3} width={40} height={5} rx={2.5} fill="rgba(255,255,255,0.1)" />
+      {/* Stand + base */}
+      <rect x={-9} y={24} width={18} height={11} fill="var(--bg-3)" />
+      <rect x={-24} y={34} width={48} height={7} rx={3.5} fill="var(--bg-3)" stroke={active ? "var(--accent)" : "var(--border-strong)"} strokeWidth={1} />
+    </g>
+  );
+}
+
+function Hub({ active }: GlyphProps) {
+  return (
+    <g>
+      <rect x={-56} y={-24} width={112} height={48} rx={10} fill="var(--bg-2)" stroke={active ? "var(--accent)" : "var(--border-strong)"} strokeWidth={active ? 3 : 1.5} />
+      <text x={0} y={-1} textAnchor="middle" fontFamily="var(--font-mono)" fontSize={15} fontWeight={700} fill="var(--warn)">
+        HUB
+      </text>
+      <g fill="var(--warn)" opacity={0.85}>
+        {[-36, -18, 0, 18, 36].map((x) => (
+          <rect key={x} x={x - 4} y={10} width={8} height={8} rx={2} />
+        ))}
+      </g>
+    </g>
+  );
+}
+
 function Browser({ active }: GlyphProps) {
   return (
     <g>
@@ -125,6 +159,8 @@ function Cloud({ active }: GlyphProps) {
 }
 
 const GLYPHS: Record<DeviceKind, (p: GlyphProps) => JSX.Element> = {
+  computer: Computer,
+  hub: Hub,
   browser: Browser,
   switch: Switch,
   router: Router,
