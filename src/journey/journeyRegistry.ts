@@ -4,8 +4,9 @@ import { chapter02 } from "./chapters/ch02";
 import { chapter03 } from "./chapters/ch03";
 import { chapter04 } from "./chapters/ch04";
 import { chapter05 } from "./chapters/ch05";
+import { chapter06 } from "./chapters/ch06";
 
-export const CHAPTERS: Chapter[] = [chapter01, chapter02, chapter03, chapter04, chapter05];
+export const CHAPTERS: Chapter[] = [chapter01, chapter02, chapter03, chapter04, chapter05, chapter06];
 
 export function getChapterBySlug(slug: string): Chapter | undefined {
   return CHAPTERS.find((c) => c.slug === slug);
@@ -25,7 +26,7 @@ export const ROADMAP: RoadmapEntry[] = [
   { number: 3, question: "Why does each computer need an identity?", concept: "addressing", slug: "computer-identity", status: "ready" },
   { number: 4, question: "What is a MAC address?", concept: "hardware identity", slug: "mac-address", status: "ready" },
   { number: 5, question: "The hub shouts to everyone — what is a switch?", concept: "switching", slug: "the-switch", status: "ready" },
-  { number: 6, question: "Why can't a switch reach another network?", concept: "broadcast domains", status: "soon" },
+  { number: 6, question: "Why can't a switch reach another network?", concept: "broadcast domains", slug: "another-network", status: "ready" },
   { number: 7, question: "What problem does a router solve?", concept: "routing", status: "soon" },
   { number: 8, question: "What is an IP address?", concept: "logical addressing", status: "soon" },
   { number: 9, question: "How do millions of networks connect?", concept: "Internet & ISPs", status: "soon" },
