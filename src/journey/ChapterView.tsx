@@ -153,8 +153,10 @@ export function ChapterView({ chapter }: ChapterViewProps) {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ type: "spring", stiffness: 240, damping: 24 }}
             >
-              <span className="bridge-eyebrow">Chapter {chapter.number} complete</span>
-              <h2>But this creates a new problem…</h2>
+              <span className="bridge-eyebrow">
+                {nextChapter ? `Chapter ${chapter.number} complete` : "Journey complete"}
+              </span>
+              <h2>{nextChapter ? "But this creates a new problem…" : "You just built the Internet."}</h2>
               <p className="bridge-text">{chapter.bridge}</p>
               <div className="bridge-actions">
                 <button className="btn btn--ghost" onClick={() => { setFinished(false); goToBeat(0); }}>

@@ -12,6 +12,7 @@ import { NameCard } from "./NameCard";
 import { DnsCache } from "./DnsCache";
 import { SegmentCard } from "./SegmentCard";
 import { CertCard } from "./CertCard";
+import { HttpCard } from "./HttpCard";
 
 const VIEW_W = 1000;
 const VIEW_H = 600;
@@ -220,6 +221,15 @@ export function Stage({ model, onSelectNode }: StageProps) {
               validTo={model.insetCert?.validTo}
               status={model.insetCert?.status}
               note={model.insetCert?.note}
+            />
+          )}
+          {model.inset === "http" && (
+            <HttpCard
+              kind={model.insetHttp?.kind ?? "request"}
+              start={model.insetHttp?.start ?? "GET / HTTP/2"}
+              headers={model.insetHttp?.headers ?? []}
+              body={model.insetHttp?.body}
+              note={model.insetHttp?.note}
             />
           )}
         </div>

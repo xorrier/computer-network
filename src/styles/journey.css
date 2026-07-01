@@ -884,6 +884,86 @@
   margin: 0;
 }
 
+/* ---- HTTP request / response card ---- */
+.httpcard {
+  width: min(500px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(8, 13, 26, 0.62);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+.httpcard-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+.httpcard-title.is-req {
+  color: var(--accent-2);
+}
+.httpcard-title.is-res {
+  color: var(--ok);
+}
+.http-start {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+}
+.http-start.is-req {
+  color: var(--accent-2);
+  background: color-mix(in srgb, var(--accent-2) 14%, transparent);
+}
+.http-start.is-res {
+  color: var(--ok);
+  background: color-mix(in srgb, var(--ok) 14%, transparent);
+}
+.http-headers {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.http-header {
+  display: flex;
+  gap: 8px;
+  font-size: 12.5px;
+  padding: 2px 4px;
+}
+.hh-key {
+  color: var(--accent-4);
+}
+.hh-val {
+  color: var(--text-1);
+  word-break: break-all;
+}
+.http-body {
+  margin: 4px 0 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-0);
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 150px;
+  overflow: auto;
+}
+.httpcard-note {
+  color: var(--text-2);
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.55;
+  margin: 2px 0 0;
+}
+
 /* ---- MAC address table (switch CAM table) ---- */
 .mactable {
   width: 100%;

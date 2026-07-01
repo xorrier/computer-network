@@ -12,8 +12,9 @@ import { chapter10 } from "./chapters/ch10";
 import { chapter11 } from "./chapters/ch11";
 import { chapter12 } from "./chapters/ch12";
 import { chapter13 } from "./chapters/ch13";
+import { chapter14 } from "./chapters/ch14";
 
-export const CHAPTERS: Chapter[] = [chapter01, chapter02, chapter03, chapter04, chapter05, chapter06, chapter07, chapter08, chapter09, chapter10, chapter11, chapter12, chapter13];
+export const CHAPTERS: Chapter[] = [chapter01, chapter02, chapter03, chapter04, chapter05, chapter06, chapter07, chapter08, chapter09, chapter10, chapter11, chapter12, chapter13, chapter14];
 
 export function getChapterBySlug(slug: string): Chapter | undefined {
   return CHAPTERS.find((c) => c.slug === slug);
@@ -41,5 +42,5 @@ export const ROADMAP: RoadmapEntry[] = [
   { number: 11, question: "How does DNS find the address?", concept: "DNS resolution", slug: "how-dns-works", status: "ready" },
   { number: 12, question: "How is a reliable connection made?", concept: "TCP handshake", slug: "tcp-handshake", status: "ready" },
   { number: 13, question: "Why is HTTPS secure?", concept: "TLS", slug: "tls-https", status: "ready" },
-  { number: 14, question: "How does the page finally appear?", concept: "HTTP & rendering", status: "soon" },
+  { number: 14, question: "How does the page finally appear?", concept: "HTTP & rendering", slug: "http-and-rendering", status: "ready" },
 ];

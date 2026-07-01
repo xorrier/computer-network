@@ -48,7 +48,7 @@ export interface StageModel {
   links?: StageLink[];
   signals?: StageSignal[];
   /** Optional centered special visual instead of / above the device scene. */
-  inset?: "binary" | "mac" | "frame" | "mactable" | "ip" | "routetable" | "hostname" | "dnscache" | "segment" | "cert" | null;
+  inset?: "binary" | "mac" | "frame" | "mactable" | "ip" | "routetable" | "hostname" | "dnscache" | "segment" | "cert" | "http" | null;
   insetText?: string;
   /** MAC address string for the "mac" inset, e.g. "00:1A:2B:3C:4D:5E". */
   insetMac?: string;
@@ -82,6 +82,14 @@ export interface StageModel {
     issuer: string;
     validTo?: string;
     status?: "valid" | "invalid";
+    note?: string;
+  };
+  /** An HTTP request or response for the "http" inset. */
+  insetHttp?: {
+    kind: "request" | "response";
+    start: string;
+    headers: { k: string; v: string }[];
+    body?: string;
     note?: string;
   };
   /** A switch's live MAC-address table for the "mactable" inset. */
