@@ -23,9 +23,6 @@ export function ChapterPage() {
   return (
     <div className="chapter-page">
       <div className="chapter-page-head">
-        <Link to="/" className="chapter-back">
-          ← Journey
-        </Link>
         <div className="chapter-titleblock">
           <span className="chapter-kicker mono">Chapter {chapter.number}</span>
           <h1>{chapter.title}</h1>

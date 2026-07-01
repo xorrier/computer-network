@@ -24,6 +24,21 @@ export function getNextChapter(currentNumber: number): Chapter | undefined {
   return CHAPTERS.find((c) => c.number === currentNumber + 1);
 }
 
+/** Story acts — the three movements of the journey, for the sidebar. */
+export interface Act {
+  id: string;
+  title: string;
+  blurb: string;
+  chapters: number[];
+}
+
+export const ACTS: Act[] = [
+  { id: "foundations", title: "Foundations", blurb: "One machine, then two", chapters: [1, 2, 3, 4] },
+  { id: "networks", title: "Networks", blurb: "Many machines, joined", chapters: [5, 6, 7, 8, 9] },
+  { id: "web", title: "The Web", blurb: "Typing google.com", chapters: [10, 11, 12, 13, 14] },
+];
+
+
 /**
  * The full story map. Only chapters with authored beats are "ready"; the rest
  * are visible so the learner can see where the journey leads, but locked.

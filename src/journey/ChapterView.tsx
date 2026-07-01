@@ -1,9 +1,10 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Chapter } from "@/types/journey";
 import { Stage } from "@/components/stage/Stage";
 import { getNextChapter } from "@/journey/journeyRegistry";
+import { markComplete } from "@/journey/progress";
 
 interface ChapterViewProps {
   chapter: Chapter;
@@ -20,6 +21,11 @@ export function ChapterView({ chapter }: ChapterViewProps) {
   const beat = chapter.beats[beatIndex]!;
   const isLastBeat = beatIndex === chapter.beats.length - 1;
   const allSaid = revealed >= beat.say.length;
+
+  // Unlock the next chapter once this one is finished.
+  useEffect(() => {
+    if (finished) markComplete(chapter.number);
+  }, [finished, chapter.number]);
 
   const chosen = useMemo(
     () => beat.interaction?.choices.find((c) => c.id === picked) ?? null,

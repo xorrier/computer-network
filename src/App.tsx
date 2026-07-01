@@ -1,16 +1,17 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { TopBar } from "@/components/layout/TopBar";
+import { LessonLayout } from "@/components/layout/LessonLayout";
 import { JourneyHome } from "@/pages/JourneyHome";
 import { ChapterPage } from "@/pages/ChapterPage";
 
 export function App() {
   return (
     <div className="app">
-      <TopBar />
       <main className="app-main">
         <Routes>
           <Route path="/" element={<JourneyHome />} />
-          <Route path="/chapter/:slug" element={<ChapterPage />} />
+          <Route element={<LessonLayout />}>
+            <Route path="/chapter/:slug" element={<ChapterPage />} />
+          </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
