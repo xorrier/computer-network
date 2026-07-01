@@ -11,6 +11,7 @@ import { RouteTable } from "./RouteTable";
 import { NameCard } from "./NameCard";
 import { DnsCache } from "./DnsCache";
 import { SegmentCard } from "./SegmentCard";
+import { CertCard } from "./CertCard";
 
 const VIEW_W = 1000;
 const VIEW_H = 600;
@@ -210,6 +211,15 @@ export function Stage({ model, onSelectNode }: StageProps) {
               flags={model.insetSegment?.flags ?? []}
               payload={model.insetSegment?.payload}
               note={model.insetSegment?.note}
+            />
+          )}
+          {model.inset === "cert" && (
+            <CertCard
+              subject={model.insetCert?.subject ?? "google.com"}
+              issuer={model.insetCert?.issuer ?? "a trusted CA"}
+              validTo={model.insetCert?.validTo}
+              status={model.insetCert?.status}
+              note={model.insetCert?.note}
             />
           )}
         </div>
