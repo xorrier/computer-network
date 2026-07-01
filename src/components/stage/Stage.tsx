@@ -9,6 +9,7 @@ import { MacTable } from "./MacTable";
 import { IpCard } from "./IpCard";
 import { RouteTable } from "./RouteTable";
 import { NameCard } from "./NameCard";
+import { DnsCache } from "./DnsCache";
 
 const VIEW_W = 1000;
 const VIEW_H = 600;
@@ -197,6 +198,9 @@ export function Stage({ model, onSelectNode }: StageProps) {
           )}
           {model.inset === "hostname" && (
             <NameCard name={model.insetHostname?.name ?? "www.google.com"} />
+          )}
+          {model.inset === "dnscache" && (
+            <DnsCache rows={model.insetDnsCache?.rows ?? []} note={model.insetDnsCache?.note} />
           )}
         </div>
       )}

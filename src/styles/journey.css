@@ -855,6 +855,89 @@
   margin-top: 2px;
 }
 
+/* ---- DNS cache (resolver) ---- */
+.dnscache {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dnscache-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.dnscache-empty {
+  padding: 22px 12px;
+  text-align: center;
+  color: var(--text-3);
+  font-size: 13px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-2);
+}
+.dnscache-head {
+  display: grid;
+  grid-template-columns: 1.3fr 1.2fr 0.6fr;
+  gap: 10px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  border-bottom: 1px solid var(--border);
+}
+.dnscache-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 56px;
+}
+.dnscache-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1.2fr 0.6fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-2);
+}
+.dnscache-row.is-fresh {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 0 18px -6px var(--accent);
+}
+.dc-name {
+  font-size: 13px;
+  color: var(--accent-2);
+  font-weight: 600;
+}
+.dc-ip {
+  font-size: 13px;
+  color: var(--accent-3);
+  font-weight: 600;
+}
+.dc-ttl {
+  font-size: 12px;
+  color: var(--text-2);
+}
+.dc-tag {
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.dnscache-note {
+  color: var(--text-2);
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.55;
+  margin-top: 2px;
+}
+
 /* ---- Narrator ---- */
 .narrator {
   display: flex;
