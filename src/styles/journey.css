@@ -1,141 +1,32 @@
 /* ============================================================
-   Journey home / story map
+   Journey home — a quiet, near-empty landing
    ============================================================ */
 .journey-home {
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 64px 24px 90px;
-}
-.jhero {
-  text-align: center;
-  max-width: 760px;
-  margin: 0 auto 72px;
-}
-.jhero-eyebrow {
-  display: inline-block;
-  color: var(--accent);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-}
-.jhero-title {
-  font-size: clamp(36px, 5.4vw, 58px);
-  line-height: 1.05;
-  margin-bottom: 22px;
-}
-.jhero-sub {
-  color: var(--text-1);
-  font-size: 18px;
-  line-height: 1.65;
-  margin-bottom: 30px;
-}
-.jhero-sub strong {
-  color: var(--text-0);
-}
-.jhero-actions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.story-map-head {
-  text-align: center;
-  margin-bottom: 28px;
-}
-.story-map-head h2 {
-  font-size: 28px;
-}
-.story-map-head p {
-  color: var(--text-2);
-  margin-top: 6px;
-}
-.story-path {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  position: relative;
-}
-.story-path::before {
-  content: "";
-  position: absolute;
-  left: 33px;
-  top: 24px;
-  bottom: 24px;
-  width: 2px;
-  background: linear-gradient(var(--accent), var(--border) 30%, var(--border));
-  opacity: 0.5;
-}
-.story-node {
-  position: relative;
-}
-.sp-link {
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 16px 18px;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  transition: transform 0.14s ease, border-color 0.2s ease, background 0.2s ease;
+  justify-content: center;
+  padding: 24px;
 }
-.story-node.is-ready .sp-link:hover {
-  transform: translateX(4px);
-  border-color: color-mix(in srgb, var(--accent) 50%, transparent);
-  background: var(--surface-strong);
-}
-.story-node.is-locked .sp-link {
-  opacity: 0.55;
-  cursor: default;
-}
-.sp-num {
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--bg-2);
-  border: 1px solid var(--border-strong);
-  color: var(--text-2);
-  font-size: 14px;
-  font-weight: 700;
-  z-index: 1;
-}
-.story-node.is-ready .sp-num {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #04121a;
-  border-color: transparent;
-}
-.sp-body {
+.home-stage {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  flex: 1;
-  min-width: 0;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+  max-width: 720px;
 }
-.sp-q {
+.home-title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(34px, 6vw, 62px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
   color: var(--text-0);
+}
+.home-start {
+  padding: 12px 34px;
   font-size: 16px;
-  font-weight: 550;
-}
-.sp-concept {
-  color: var(--text-3);
-  font-size: 13px;
-}
-.sp-status {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-3);
-  white-space: nowrap;
-}
-.sp-status.is-ready {
-  color: var(--accent);
 }
 
 /* ============================================================

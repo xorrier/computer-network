@@ -17,31 +17,29 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: 11px 20px;
+  padding: 10px 20px;
   border-radius: var(--radius-md);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 15px;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: transform 0.12s ease, background 0.2s ease, border-color 0.2s ease;
-}
-.btn:active {
-  transform: translateY(1px);
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
 }
 .btn--primary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #04121a;
+  background: var(--text-0);
+  color: var(--bg-0);
 }
 .btn--primary:hover {
-  filter: brightness(1.06);
+  background: #ffffff;
 }
 .btn--ghost {
-  background: var(--surface);
+  background: transparent;
   border-color: var(--border);
-  color: var(--text-0);
+  color: var(--text-1);
 }
 .btn--ghost:hover {
-  background: var(--surface-strong);
+  border-color: var(--border-strong);
+  color: var(--text-0);
 }
 
 /* ============================================================
@@ -55,8 +53,7 @@
   align-items: center;
   gap: var(--space-5);
   padding: 12px 24px;
-  background: rgba(8, 12, 24, 0.72);
-  backdrop-filter: blur(14px);
+  background: color-mix(in srgb, var(--bg-0) 88%, transparent);
   border-bottom: 1px solid var(--border);
 }
 .brand {
@@ -65,14 +62,14 @@
   gap: 10px;
 }
 .brand-name {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--text-0);
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 .brand-name strong {
-  color: var(--accent);
-  font-weight: 700;
+  color: var(--text-0);
+  font-weight: 600;
 }
 .topnav {
   display: flex;
