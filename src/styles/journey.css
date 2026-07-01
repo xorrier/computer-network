@@ -512,6 +512,106 @@
   color: var(--text-0);
 }
 
+/* ---- Domain name card ---- */
+.namecard {
+  width: min(560px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: rgba(8, 13, 26, 0.6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  backdrop-filter: blur(4px);
+}
+.namecard-title {
+  color: var(--text-3);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.namecard-parts {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.namecard-partwrap {
+  display: inline-flex;
+  align-items: center;
+}
+.name-part {
+  font-family: var(--font-mono);
+  font-size: 26px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 7px;
+  margin: 0 1px;
+}
+.name-part.is-host {
+  color: var(--accent-3);
+  background: color-mix(in srgb, var(--accent-3) 16%, transparent);
+}
+.name-part.is-domain {
+  color: var(--accent-2);
+  background: color-mix(in srgb, var(--accent-2) 16%, transparent);
+}
+.name-part.is-tld {
+  color: var(--accent-4);
+  background: color-mix(in srgb, var(--accent-4) 16%, transparent);
+}
+.name-dot {
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: 24px;
+}
+.namecard-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.name-lg {
+  font-size: 12.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.name-lg::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+.name-lg.is-host {
+  color: var(--accent-3);
+}
+.name-lg.is-host::before {
+  background: var(--accent-3);
+}
+.name-lg.is-domain {
+  color: var(--accent-2);
+}
+.name-lg.is-domain::before {
+  background: var(--accent-2);
+}
+.name-lg.is-tld {
+  color: var(--accent-4);
+}
+.name-lg.is-tld::before {
+  background: var(--accent-4);
+}
+.namecard-note {
+  color: var(--text-2);
+  font-size: 13.5px;
+  text-align: center;
+  line-height: 1.55;
+}
+.namecard-note strong {
+  color: var(--text-0);
+}
+
 /* ---- Ethernet frame diagram ---- */
 .framecard {
   width: min(620px, 100%);

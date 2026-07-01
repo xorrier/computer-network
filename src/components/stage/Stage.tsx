@@ -8,6 +8,7 @@ import { FrameDiagram } from "./FrameDiagram";
 import { MacTable } from "./MacTable";
 import { IpCard } from "./IpCard";
 import { RouteTable } from "./RouteTable";
+import { NameCard } from "./NameCard";
 
 const VIEW_W = 1000;
 const VIEW_H = 600;
@@ -193,6 +194,9 @@ export function Stage({ model, onSelectNode }: StageProps) {
           )}
           {model.inset === "routetable" && (
             <RouteTable rows={model.insetRouteTable?.rows ?? []} note={model.insetRouteTable?.note} />
+          )}
+          {model.inset === "hostname" && (
+            <NameCard name={model.insetHostname?.name ?? "www.google.com"} />
           )}
         </div>
       )}
