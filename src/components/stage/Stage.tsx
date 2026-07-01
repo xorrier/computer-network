@@ -7,6 +7,7 @@ import { MacCard } from "./MacCard";
 import { FrameDiagram } from "./FrameDiagram";
 import { MacTable } from "./MacTable";
 import { IpCard } from "./IpCard";
+import { RouteTable } from "./RouteTable";
 
 const VIEW_W = 1000;
 const VIEW_H = 600;
@@ -189,6 +190,9 @@ export function Stage({ model, onSelectNode }: StageProps) {
           )}
           {model.inset === "ip" && (
             <IpCard ip={model.insetIp?.ip ?? "192.168.1.10"} prefix={model.insetIp?.prefix ?? 24} />
+          )}
+          {model.inset === "routetable" && (
+            <RouteTable rows={model.insetRouteTable?.rows ?? []} note={model.insetRouteTable?.note} />
           )}
         </div>
       )}

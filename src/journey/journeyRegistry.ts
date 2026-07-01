@@ -6,8 +6,9 @@ import { chapter04 } from "./chapters/ch04";
 import { chapter05 } from "./chapters/ch05";
 import { chapter06 } from "./chapters/ch06";
 import { chapter07 } from "./chapters/ch07";
+import { chapter08 } from "./chapters/ch08";
 
-export const CHAPTERS: Chapter[] = [chapter01, chapter02, chapter03, chapter04, chapter05, chapter06, chapter07];
+export const CHAPTERS: Chapter[] = [chapter01, chapter02, chapter03, chapter04, chapter05, chapter06, chapter07, chapter08];
 
 export function getChapterBySlug(slug: string): Chapter | undefined {
   return CHAPTERS.find((c) => c.slug === slug);
@@ -29,7 +30,7 @@ export const ROADMAP: RoadmapEntry[] = [
   { number: 5, question: "The hub shouts to everyone — what is a switch?", concept: "switching", slug: "the-switch", status: "ready" },
   { number: 6, question: "Why can't a switch reach another network?", concept: "broadcast domains", slug: "another-network", status: "ready" },
   { number: 7, question: "What is an IP address?", concept: "logical addressing", slug: "ip-address", status: "ready" },
-  { number: 8, question: "What problem does a router solve?", concept: "routing", status: "soon" },
+  { number: 8, question: "What problem does a router solve?", concept: "routing", slug: "the-router", status: "ready" },
   { number: 9, question: "How do millions of networks connect?", concept: "Internet & ISPs", status: "soon" },
   { number: 10, question: "I typed google.com — what is that name?", concept: "names vs addresses", status: "soon" },
   { number: 11, question: "How does DNS find the address?", concept: "DNS resolution", status: "soon" },
