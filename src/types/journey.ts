@@ -48,7 +48,7 @@ export interface StageModel {
   links?: StageLink[];
   signals?: StageSignal[];
   /** Optional centered special visual instead of / above the device scene. */
-  inset?: "binary" | "mac" | "frame" | "mactable" | "ip" | "routetable" | "hostname" | "dnscache" | null;
+  inset?: "binary" | "mac" | "frame" | "mactable" | "ip" | "routetable" | "hostname" | "dnscache" | "segment" | null;
   insetText?: string;
   /** MAC address string for the "mac" inset, e.g. "00:1A:2B:3C:4D:5E". */
   insetMac?: string;
@@ -66,6 +66,14 @@ export interface StageModel {
   /** The resolver's live DNS cache for the "dnscache" inset. */
   insetDnsCache?: {
     rows: { name: string; ip: string; ttl?: string; fresh?: boolean }[];
+    note?: string;
+  };
+  /** A TCP segment for the "segment" inset. */
+  insetSegment?: {
+    seq: string;
+    ack?: string;
+    flags: string[];
+    payload?: string;
     note?: string;
   };
   /** A switch's live MAC-address table for the "mactable" inset. */

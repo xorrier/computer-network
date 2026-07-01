@@ -705,6 +705,106 @@
   color: var(--text-0);
 }
 
+/* ---- TCP segment card ---- */
+.segmentcard {
+  width: min(560px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  background: rgba(8, 13, 26, 0.6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  backdrop-filter: blur(4px);
+}
+.segmentcard-title {
+  color: var(--text-3);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.segment-flags {
+  display: flex;
+  gap: 8px;
+}
+.seg-flag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  color: var(--text-3);
+  background: var(--bg-2);
+}
+.seg-flag.is-on {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  box-shadow: 0 0 16px -5px var(--accent);
+}
+.segmentcard-row {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+.segment-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 6px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  text-align: center;
+}
+.segment-field.s-data {
+  flex: 1.4;
+}
+.sf-key {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.sf-val {
+  font-size: 12px;
+  color: var(--text-0);
+  word-break: break-all;
+}
+.sf-hint {
+  font-size: 10.5px;
+  color: var(--text-3);
+}
+.segment-field.s-seq {
+  background: color-mix(in srgb, var(--accent-2) 14%, transparent);
+}
+.segment-field.s-seq .sf-key {
+  color: var(--accent-2);
+}
+.segment-field.s-ack {
+  background: color-mix(in srgb, var(--accent-3) 14%, transparent);
+}
+.segment-field.s-ack .sf-key {
+  color: var(--accent-3);
+}
+.segment-field.s-data {
+  background: color-mix(in srgb, var(--accent-4) 14%, transparent);
+}
+.segment-field.s-data .sf-key {
+  color: var(--accent-4);
+}
+.segmentcard-note {
+  color: var(--text-2);
+  font-size: 13.5px;
+  text-align: center;
+  line-height: 1.55;
+  margin: 0;
+}
+
 /* ---- MAC address table (switch CAM table) ---- */
 .mactable {
   width: 100%;

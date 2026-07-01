@@ -10,8 +10,9 @@ import { chapter08 } from "./chapters/ch08";
 import { chapter09 } from "./chapters/ch09";
 import { chapter10 } from "./chapters/ch10";
 import { chapter11 } from "./chapters/ch11";
+import { chapter12 } from "./chapters/ch12";
 
-export const CHAPTERS: Chapter[] = [chapter01, chapter02, chapter03, chapter04, chapter05, chapter06, chapter07, chapter08, chapter09, chapter10, chapter11];
+export const CHAPTERS: Chapter[] = [chapter01, chapter02, chapter03, chapter04, chapter05, chapter06, chapter07, chapter08, chapter09, chapter10, chapter11, chapter12];
 
 export function getChapterBySlug(slug: string): Chapter | undefined {
   return CHAPTERS.find((c) => c.slug === slug);
@@ -37,7 +38,7 @@ export const ROADMAP: RoadmapEntry[] = [
   { number: 9, question: "How do millions of networks connect?", concept: "Internet & ISPs", slug: "the-internet", status: "ready" },
   { number: 10, question: "I typed google.com — what is that name?", concept: "names vs addresses", slug: "names-vs-addresses", status: "ready" },
   { number: 11, question: "How does DNS find the address?", concept: "DNS resolution", slug: "how-dns-works", status: "ready" },
-  { number: 12, question: "How is a reliable connection made?", concept: "TCP handshake", status: "soon" },
+  { number: 12, question: "How is a reliable connection made?", concept: "TCP handshake", slug: "tcp-handshake", status: "ready" },
   { number: 13, question: "Why is HTTPS secure?", concept: "TLS", status: "soon" },
   { number: 14, question: "How does the page finally appear?", concept: "HTTP & rendering", status: "soon" },
 ];

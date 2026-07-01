@@ -10,6 +10,7 @@ import { IpCard } from "./IpCard";
 import { RouteTable } from "./RouteTable";
 import { NameCard } from "./NameCard";
 import { DnsCache } from "./DnsCache";
+import { SegmentCard } from "./SegmentCard";
 
 const VIEW_W = 1000;
 const VIEW_H = 600;
@@ -201,6 +202,15 @@ export function Stage({ model, onSelectNode }: StageProps) {
           )}
           {model.inset === "dnscache" && (
             <DnsCache rows={model.insetDnsCache?.rows ?? []} note={model.insetDnsCache?.note} />
+          )}
+          {model.inset === "segment" && (
+            <SegmentCard
+              seq={model.insetSegment?.seq ?? "seq=0"}
+              ack={model.insetSegment?.ack}
+              flags={model.insetSegment?.flags ?? []}
+              payload={model.insetSegment?.payload}
+              note={model.insetSegment?.note}
+            />
           )}
         </div>
       )}
