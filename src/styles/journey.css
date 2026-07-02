@@ -420,11 +420,10 @@ a.sb-node-link:hover {
   flex-direction: column;
   gap: 12px;
   align-items: center;
-  background: rgba(8, 13, 26, 0.6);
+  background: var(--bg-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 22px 26px;
-  backdrop-filter: blur(4px);
 }
 .binenc-row {
   display: flex;
@@ -508,11 +507,10 @@ a.sb-node-link:hover {
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  background: rgba(8, 13, 26, 0.6);
+  background: var(--bg-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 26px;
-  backdrop-filter: blur(4px);
 }
 .maccard-title {
   color: var(--text-3);
@@ -594,11 +592,10 @@ a.sb-node-link:hover {
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  background: rgba(8, 13, 26, 0.6);
+  background: var(--bg-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 26px;
-  backdrop-filter: blur(4px);
 }
 .ipcard-title {
   color: var(--text-3);
@@ -689,11 +686,10 @@ a.sb-node-link:hover {
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  background: rgba(8, 13, 26, 0.6);
+  background: var(--bg-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 26px;
-  backdrop-filter: blur(4px);
 }
 .namecard-title {
   color: var(--text-3);
@@ -789,11 +785,10 @@ a.sb-node-link:hover {
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  background: rgba(8, 13, 26, 0.6);
+  background: var(--bg-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 24px;
-  backdrop-filter: blur(4px);
 }
 .framecard-title {
   color: var(--text-3);
@@ -882,11 +877,10 @@ a.sb-node-link:hover {
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  background: rgba(8, 13, 26, 0.6);
+  background: var(--bg-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 22px;
-  backdrop-filter: blur(4px);
 }
 .segmentcard-title {
   color: var(--text-3);
@@ -982,11 +976,10 @@ a.sb-node-link:hover {
   flex-direction: column;
   align-items: stretch;
   gap: 12px;
-  background: rgba(8, 13, 26, 0.6);
+  background: var(--bg-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 22px;
-  backdrop-filter: blur(4px);
 }
 .certcard-title {
   color: var(--text-3);
@@ -1060,11 +1053,10 @@ a.sb-node-link:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: rgba(8, 13, 26, 0.62);
+  background: var(--bg-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 20px;
-  backdrop-filter: blur(4px);
 }
 .httpcard-title {
   font-size: 12px;
