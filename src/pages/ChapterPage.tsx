@@ -29,7 +29,7 @@ export function ChapterPage() {
           <p>{chapter.promise}</p>
         </div>
       </div>
-      <ChapterView chapter={chapter} />
+      <ChapterView key={chapter.slug} chapter={chapter} />
     </div>
   );
 }
