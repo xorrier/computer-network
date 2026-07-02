@@ -52,6 +52,11 @@
 }
 .lesson-content {
   min-width: 0;
+  transition: padding-left 0.25s ease;
+}
+.lesson-shell.is-collapsed .lesson-content {
+  /* make room for the (now left-docked) collapse toggle */
+  padding-left: 44px;
 }
 .lesson-aside-toggle {
   position: fixed;
@@ -325,16 +330,23 @@ a.sb-node-link:hover {
   background: var(--surface-strong);
 }
 .chapter-kicker {
-  color: var(--accent);
-  font-size: 13px;
+  color: var(--text-2);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .chapter-titleblock h1 {
-  font-size: 24px;
-  margin: 4px 0;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.15;
+  margin: 6px 0;
 }
 .chapter-titleblock p {
   color: var(--text-2);
   font-size: 15px;
+  line-height: 1.5;
 }
 
 .chapter {
@@ -352,15 +364,14 @@ a.sb-node-link:hover {
   position: relative;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  background:
-    radial-gradient(700px 360px at 50% 0%, rgba(96, 165, 250, 0.07), transparent 70%),
-    var(--bg-1);
+  background: var(--bg-1);
   overflow: hidden;
   height: 100%;
   min-height: 440px;
   display: flex;
   flex-direction: column;
 }
+/* stage background set to flat ink above */
 .stage-svg {
   width: 100%;
   height: auto;
@@ -1374,9 +1385,11 @@ a.sb-node-link:hover {
   font-size: 12.5px;
 }
 .narrator-q {
-  font-size: 21px;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 22px;
   margin-top: 8px;
-  line-height: 1.25;
+  line-height: 1.3;
 }
 .narrator-body {
   flex: 1;
@@ -1392,10 +1405,11 @@ a.sb-node-link:hover {
   gap: 14px;
 }
 .say-p {
+  font-family: var(--font-serif);
   color: var(--text-1);
-  font-size: 16.5px;
-  line-height: 1.65;
-  opacity: 0.7;
+  font-size: 19px;
+  line-height: 1.7;
+  opacity: 0.5;
   transition: opacity 0.3s ease;
 }
 .say-p.is-latest {
@@ -1403,25 +1417,28 @@ a.sb-node-link:hover {
   color: var(--text-0);
 }
 .say-em {
-  color: var(--accent);
-  font-style: normal;
-  font-weight: 600;
+  color: var(--text-0);
+  font-style: italic;
+  font-weight: 500;
 }
 .reveal-banner {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 13px 16px;
+  padding: 12px 15px;
   border-radius: var(--radius-md);
-  background: color-mix(in srgb, var(--accent) 12%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--accent);
   color: var(--text-0);
   font-size: 15px;
-  font-weight: 550;
+  font-weight: 500;
 }
 .reveal-key {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--accent);
   white-space: nowrap;
 }
@@ -1498,45 +1515,41 @@ a.sb-node-link:hover {
   flex-wrap: wrap;
 }
 .beat-dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   border: none;
-  background: var(--bg-3);
+  background: var(--border-strong);
   cursor: pointer;
   padding: 0;
   transition: transform 0.15s ease, background 0.2s ease;
 }
 .beat-dot:hover {
-  transform: scale(1.2);
+  transform: scale(1.25);
 }
 .beat-dot.is-done {
-  background: var(--accent-2);
+  background: var(--text-2);
 }
 .beat-dot.is-active {
   background: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
 }
 .continue-btn {
-  padding: 11px 22px;
+  padding: 10px 22px;
   border-radius: var(--radius-md);
-  border: none;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #04121a;
-  font-weight: 650;
+  border: 1px solid transparent;
+  background: var(--text-0);
+  color: var(--bg-0);
+  font-weight: 500;
   font-size: 15px;
   cursor: pointer;
   white-space: nowrap;
-  transition: filter 0.15s ease, transform 0.1s ease, opacity 0.2s ease;
+  transition: background 0.15s ease, opacity 0.2s ease;
 }
 .continue-btn:hover:not(:disabled) {
-  filter: brightness(1.07);
-}
-.continue-btn:active:not(:disabled) {
-  transform: translateY(1px);
+  background: #ffffff;
 }
 .continue-btn:disabled {
-  opacity: 0.4;
+  opacity: 0.35;
   cursor: not-allowed;
 }
 
@@ -1545,8 +1558,8 @@ a.sb-node-link:hover {
   position: fixed;
   inset: 0;
   z-index: 70;
-  background: rgba(3, 6, 14, 0.7);
-  backdrop-filter: blur(6px);
+  background: rgba(5, 5, 6, 0.72);
+  backdrop-filter: blur(4px);
   display: grid;
   place-items: center;
   padding: 24px;
@@ -1568,7 +1581,9 @@ a.sb-node-link:hover {
   text-transform: uppercase;
 }
 .bridge-card h2 {
-  font-size: 26px;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 27px;
   margin: 12px 0 14px;
 }
 .bridge-text {
