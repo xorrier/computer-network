@@ -1366,7 +1366,7 @@ a.sb-node-link:hover {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: var(--surface);
-  min-height: 440px;
+  height: clamp(460px, 68vh, 680px);
 }
 .narrator-head {
   padding: 20px 22px 14px;
@@ -1385,6 +1385,7 @@ a.sb-node-link:hover {
 }
 .narrator-body {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   padding: 20px 22px;
   display: flex;
@@ -1500,33 +1501,49 @@ a.sb-node-link:hover {
   padding: 14px 22px;
   border-top: 1px solid var(--border);
 }
-.beat-dots {
-  display: flex;
-  gap: 7px;
+.beat-progress {
   flex: 1;
-  flex-wrap: wrap;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--bg-3);
+  overflow: hidden;
 }
-.beat-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: none;
-  background: var(--border-strong);
-  cursor: pointer;
-  padding: 0;
-  transition: transform 0.15s ease, background 0.2s ease;
-}
-.beat-dot:hover {
-  transform: scale(1.25);
-}
-.beat-dot.is-done {
-  background: var(--text-2);
-}
-.beat-dot.is-active {
+.beat-progress-fill {
+  height: 100%;
   background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.35s ease;
 }
-.continue-btn {
-  padding: 10px 22px;
+.transport {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.transport-btn {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-2);
+  color: var(--text-0);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, opacity 0.2s ease;
+}
+.transport-btn:hover:not(:disabled) {
+  background: var(--bg-3);
+  border-color: var(--text-3);
+}
+.transport-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.transport-btn svg {
+  display: block;
+}
+.transport-open {
+  padding: 10px 20px;
   border-radius: var(--radius-md);
   border: 1px solid transparent;
   background: var(--text-0);
@@ -1535,14 +1552,10 @@ a.sb-node-link:hover {
   font-size: 15px;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.15s ease, opacity 0.2s ease;
+  transition: background 0.15s ease;
 }
-.continue-btn:hover:not(:disabled) {
+.transport-open:hover {
   background: #ffffff;
-}
-.continue-btn:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
 }
 
 /* ---- Bridge (end-of-chapter cliffhanger) ---- */
