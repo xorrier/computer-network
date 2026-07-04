@@ -25,7 +25,6 @@ export function Sidebar() {
       </Link>
 
       <div className="sb-journey-head">
-        <span className="sb-journey-title">Your journey</span>
         <span className="sb-journey-meta mono">
           {ROADMAP.length} lessons · {pct}%
         </span>
