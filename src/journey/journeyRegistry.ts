@@ -13,8 +13,9 @@ import { chapter11 } from "./chapters/ch11";
 import { chapter12 } from "./chapters/ch12";
 import { chapter13 } from "./chapters/ch13";
 import { chapter14 } from "./chapters/ch14";
+import { chapter15 } from "./chapters/ch15";
 
-export const CHAPTERS: Chapter[] = [chapter01, chapter02, chapter03, chapter04, chapter05, chapter06, chapter07, chapter08, chapter09, chapter10, chapter11, chapter12, chapter13, chapter14];
+export const CHAPTERS: Chapter[] = [chapter01, chapter02, chapter03, chapter04, chapter05, chapter06, chapter07, chapter08, chapter09, chapter10, chapter11, chapter12, chapter13, chapter14, chapter15];
 
 export function getChapterBySlug(slug: string): Chapter | undefined {
   return CHAPTERS.find((c) => c.slug === slug);
@@ -36,6 +37,7 @@ export const ACTS: Act[] = [
   { id: "foundations", title: "Foundations", blurb: "One machine, then two", chapters: [1, 2, 3, 4] },
   { id: "networks", title: "Networks", blurb: "Many machines, joined", chapters: [5, 6, 7, 8, 9] },
   { id: "web", title: "The Web", blurb: "Typing google.com", chapters: [10, 11, 12, 13, 14] },
+  { id: "stack", title: "Under the Hood", blurb: "One model for all of it", chapters: [15] },
 ];
 
 
@@ -58,4 +60,5 @@ export const ROADMAP: RoadmapEntry[] = [
   { number: 12, question: "How is a reliable connection made?", concept: "TCP handshake", slug: "tcp-handshake", status: "ready" },
   { number: 13, question: "Why is HTTPS secure?", concept: "TLS", slug: "tls-https", status: "ready" },
   { number: 14, question: "How does the page finally appear?", concept: "HTTP & rendering", slug: "http-and-rendering", status: "ready" },
+  { number: 15, question: "How do all the pieces fit into one system?", concept: "the network stack", slug: "the-network-stack", status: "ready" },
 ];

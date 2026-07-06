@@ -18,7 +18,7 @@ export const chapter14: Chapter = {
   title: "HTTP: asking for the page",
   promise: "You'll watch the browser ask for the page, get it back, and turn the bytes into pixels — the last step of the whole journey.",
   bridge:
-    "Look back at what just happened. You started with a single computer that only knew how to flip bits on and off. Fourteen steps later, that same machine can name a server on the other side of the planet, find it, reach it across a dozen networks, trust it, and paint its page — all in the time it takes to blink. That's the Internet: not one clever machine, but millions of simple ones, each solving one small problem, composed into something that feels like magic. Now you know how it actually works.",
+    "You just carried a message from a single computer flipping bits all the way to a painted page on the far side of the planet. But notice *how* you did it: bits, then frames, then IP, then routers, then names, then a reliable connection, then a private one, then the page — each trick quietly trusting the one beneath it. You built the whole Internet without ever seeing the map. One last chapter draws that map — the layered model that every piece you made snaps into.",
   beats: [
     {
       id: "b1-request",

@@ -48,7 +48,7 @@ export interface StageModel {
   links?: StageLink[];
   signals?: StageSignal[];
   /** Optional centered special visual instead of / above the device scene. */
-  inset?: "binary" | "mac" | "frame" | "mactable" | "ip" | "routetable" | "hostname" | "dnscache" | "segment" | "cert" | "http" | null;
+  inset?: "binary" | "mac" | "frame" | "mactable" | "ip" | "routetable" | "hostname" | "dnscache" | "segment" | "cert" | "http" | "stack" | null;
   insetText?: string;
   /** MAC address string for the "mac" inset, e.g. "00:1A:2B:3C:4D:5E". */
   insetMac?: string;
@@ -95,6 +95,14 @@ export interface StageModel {
   /** A switch's live MAC-address table for the "mactable" inset. */
   insetMacTable?: {
     rows: { port: string; mac: string; fresh?: boolean }[];
+    note?: string;
+  };
+  /** The layered network model for the "stack" inset. */
+  insetStack?: {
+    /** "layers" = the OSI/TCP-IP map; "wrap" = encapsulation; "unwrap" = decapsulation. */
+    view: "layers" | "wrap" | "unwrap";
+    /** Which layer ids to highlight, e.g. ["transport"] or ["link","physical"]. */
+    active?: string[];
     note?: string;
   };
   /** Small caption shown beneath the stage. */

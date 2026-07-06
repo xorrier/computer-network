@@ -13,6 +13,7 @@ import { DnsCache } from "./DnsCache";
 import { SegmentCard } from "./SegmentCard";
 import { CertCard } from "./CertCard";
 import { HttpCard } from "./HttpCard";
+import { StackCard } from "./StackCard";
 
 const VIEW_W = 1000;
 const VIEW_H = 600;
@@ -230,6 +231,13 @@ export function Stage({ model, onSelectNode }: StageProps) {
               headers={model.insetHttp?.headers ?? []}
               body={model.insetHttp?.body}
               note={model.insetHttp?.note}
+            />
+          )}
+          {model.inset === "stack" && (
+            <StackCard
+              view={model.insetStack?.view ?? "layers"}
+              active={model.insetStack?.active}
+              note={model.insetStack?.note}
             />
           )}
         </div>
