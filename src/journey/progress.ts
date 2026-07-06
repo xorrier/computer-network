@@ -4,8 +4,8 @@ import { useMemo, useSyncExternalStore } from "react";
  * Tiny progress store. A chapter is "completed" once the learner reaches the
  * end of it. Persisted in localStorage so progress survives reloads.
  *
- * Unlock rule: chapter 1 is always open; every other chapter unlocks once the
- * one before it is completed (i.e. "unlocked = completed, or the next one").
+ * Chapters are never locked: every chapter is open from the start. Completion
+ * is still tracked so the sidebar can show which chapters are done.
  */
 
 const KEY = "netacademy:completed";
@@ -33,8 +33,8 @@ export function markComplete(n: number): void {
   listeners.forEach((l) => l());
 }
 
-export function isUnlocked(n: number, completed: Set<number>): boolean {
-  return n === 1 || completed.has(n - 1) || completed.has(n);
+export function isUnlocked(_n: number, _completed: Set<number>): boolean {
+  return true;
 }
 
 function subscribe(cb: () => void): () => void {
