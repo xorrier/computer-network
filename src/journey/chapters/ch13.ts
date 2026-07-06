@@ -86,10 +86,11 @@ export const chapter13: Chapter = {
     {
       id: "b4-keyexchange",
       say: [
-        "Now secrecy. Using the public key from that certificate, the two sides perform a *key exchange*.",
-        "Through a bit of clever math, they end up sharing one secret *session key* — even though every message crossed the open network.",
-        "The eavesdropper in the middle saw the whole exchange and still can't reconstruct the key. Only your browser and google now hold it.",
+        "Now secrecy. The certificate proved *who* the server is; next, both sides run a *Diffie–Hellman key exchange* to agree on a secret.",
+        "Each side mixes in its own private random value, and through a bit of clever math they end up sharing one secret *session key* — even though every message crossed the open network.",
+        "The eavesdropper saw the whole exchange and still can't reconstruct the key. And because that key is discarded after the session, even a future break-in can't decrypt today's traffic — that's *forward secrecy*.",
       ],
+      reveal: "The shared key comes from a Diffie–Hellman exchange — not the certificate — giving forward secrecy.",
       stage: {
         nodes: [
           { ...YOU, highlight: true, badge: "shared key 🔑" },

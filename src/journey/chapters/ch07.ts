@@ -64,10 +64,10 @@ export const chapter07: Chapter = {
       id: "b2-split",
       say: [
         "Here's what makes an IP address special: it comes in *two parts*.",
-        "The front is the *network* part — which network you're on. The back is the *host* part — which specific computer on that network.",
-        "The little /24 marks where the split falls: here the first three numbers are the network (192.168.1), and the last is the host (.10).",
+        "An IPv4 address is 32 bits — four numbers, each 0–255. The front is the *network* part (which network you're on); the back is the *host* part (which computer on it).",
+        "A *subnet mask*, written as the /24 prefix, marks where the split falls: here the first three numbers are the network (192.168.1), and the last is the host (.10).",
       ],
-      reveal: "IP = network part + host part. The prefix (/24) marks the split.",
+      reveal: "IP = network part + host part. The subnet mask (/24) marks the split.",
       stage: {
         nodes: [],
         inset: "ip",

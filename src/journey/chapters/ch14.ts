@@ -37,13 +37,13 @@ export const chapter14: Chapter = {
         inset: "http",
         insetHttp: {
           kind: "request",
-          start: "GET / HTTP/2",
+          start: "GET / HTTP/1.1",
           headers: [
             { k: "Host", v: "google.com" },
             { k: "User-Agent", v: "Firefox/…" },
             { k: "Accept", v: "text/html" },
           ],
-          note: "Plain text, wrapped inside the encrypted TLS stream.",
+          note: "Readable text, wrapped inside the encrypted TLS stream.",
         },
         caption: "The request is just a few lines of text.",
       },
@@ -64,7 +64,7 @@ export const chapter14: Chapter = {
         inset: "http",
         insetHttp: {
           kind: "request",
-          start: "GET /search HTTP/2",
+          start: "GET /search HTTP/1.1",
           headers: [
             { k: "Host", v: "google.com" },
             { k: "Accept-Language", v: "en-US" },
@@ -93,7 +93,7 @@ export const chapter14: Chapter = {
         inset: "http",
         insetHttp: {
           kind: "response",
-          start: "200 OK",
+          start: "HTTP/1.1 200 OK",
           headers: [
             { k: "Content-Type", v: "text/html" },
             { k: "Content-Length", v: "1024" },
@@ -120,7 +120,7 @@ export const chapter14: Chapter = {
         inset: "http",
         insetHttp: {
           kind: "response",
-          start: "200 OK",
+          start: "HTTP/1.1 200 OK",
           headers: [{ k: "Content-Type", v: "text/html" }],
           body: "<link rel=\"stylesheet\" href=\"/style.css\">\n<script src=\"/app.js\"></script>\n<img src=\"/logo.png\">",
           note: "The HTML references more files the browser must fetch.",

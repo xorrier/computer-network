@@ -136,9 +136,9 @@ export const chapter09: Chapter = {
       say: [
         "One puzzle: your address is 192.168.1.10 — but *millions* of homes use that exact same private number. How is that not chaos?",
         "Because it's *private* — it only means anything inside your own network. The outside world never sees it.",
-        "Your ISP gives your home one *public* IP, unique on the whole Internet. That single public address is the return address the rest of the world actually uses.",
+        "Your ISP gives your home one *public* IP, unique on the whole Internet. Your router rewrites your private address to that public one on the way out — a trick called *NAT* (Network Address Translation) — and rewrites it back on the replies.",
       ],
-      reveal: "Private IPs are reused inside homes; one public IP represents you to the world.",
+      reveal: "NAT lets many private addresses share one public IP toward the world.",
       stage: {
         nodes: [
           { ...YOU, badge: "private 192.168.1.10" },

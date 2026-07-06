@@ -93,6 +93,43 @@ export const chapter08: Chapter = {
       },
     },
     {
+      id: "b2b-arp",
+      say: [
+        "One catch before A can send: it knows the gateway's *IP* (192.168.1.1), but a frame needs a destination *MAC*. How does A learn it?",
+        "A shouts a broadcast to the whole local network: *“who has 192.168.1.1?”* This little question is called *ARP* (Address Resolution Protocol).",
+        "The router recognizes its own IP and replies, *“that's me — here's my MAC.”* A caches that answer, so it only has to ask once.",
+      ],
+      reveal: "ARP finds the MAC for a known IP by asking the local network.",
+      stage: {
+        nodes: [
+          { ...A, highlight: true, badge: "who has .1?" },
+          { ...B, badge: "not me" },
+          { ...C, badge: "not me" },
+          { ...SW1 },
+          { ...RT, highlight: true, badge: "that's me → my MAC" },
+          { ...D, dim: true },
+          { ...E, dim: true },
+          { ...SW2, dim: true },
+        ],
+        links: [
+          { id: "l-a", from: "pc-a", to: "sw1", active: true },
+          { id: "l-b", from: "pc-b", to: "sw1", active: true },
+          { id: "l-c", from: "pc-c", to: "sw1", active: true },
+          { id: "l-r1", from: "sw1", to: "rt", active: true },
+          { id: "l-r2", from: "rt", to: "sw2" },
+          { id: "l-d", from: "pc-d", to: "sw2" },
+          { id: "l-e", from: "pc-e", to: "sw2" },
+        ],
+        signals: [
+          { id: "s-arp-a", linkId: "l-a", from: "pc-a", label: "ARP", color: "var(--warn)" },
+          { id: "s-arp-b", linkId: "l-b", from: "sw1", label: "who has .1?", color: "var(--warn)" },
+          { id: "s-arp-c", linkId: "l-c", from: "sw1", label: "who has .1?", color: "var(--warn)" },
+          { id: "s-arp-r", linkId: "l-r1", from: "sw1", label: "who has .1?", color: "var(--warn)" },
+        ],
+        caption: "ARP: broadcast the IP, learn the MAC that owns it.",
+      },
+    },
+    {
       id: "b3-handoff",
       say: [
         "A wants to reach D at 10.0.0.20. Different network — so A sends the packet toward its gateway.",

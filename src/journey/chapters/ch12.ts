@@ -58,7 +58,7 @@ export const chapter12: Chapter = {
       id: "b3-syn",
       say: [
         "Step one. Your browser sends a tiny message with the *SYN* flag set — short for “synchronize”.",
-        "It carries a starting number for counting bytes: “Let's talk. My sequence number starts at 1000.”",
+        "It's aimed at a *port* — 443 for https — so the server knows which service you want, and it carries a starting number for counting bytes: “My sequence number starts at 1000.”",
         "No web data yet — this packet's only job is to ask to open the conversation.",
       ],
       stage: {
@@ -72,7 +72,7 @@ export const chapter12: Chapter = {
         insetSegment: {
           seq: "1000",
           flags: ["SYN"],
-          note: "“Can we talk? My byte counter starts at 1000.”",
+          note: "To port 443 (https). “Can we talk? My byte counter starts at 1000.”",
         },
         caption: "SYN: the browser asks to open a connection.",
       },
